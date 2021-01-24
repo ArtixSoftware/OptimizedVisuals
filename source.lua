@@ -5,7 +5,7 @@ local function Set(t, i, v)
 end
 
 function module:BoxUpdate(Instance, StartCF, Size, Properties)
-    if Instance then
+    if Instance ~= nil then
         local Camera = game:GetService("Workspace").CurrentCamera
 
         local TopLeft, TLVis = Camera:WorldToViewportPoint((StartCF * CFrame.new(Size.X, Size.Y, 0)).Position)
@@ -25,6 +25,7 @@ function module:BoxUpdate(Instance, StartCF, Size, Properties)
             return Instance
         else
             Instance:Remove()
+            Instance = nil
             return nil
         end
     end
