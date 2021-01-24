@@ -8,6 +8,7 @@ function module:BoxUpdate(Instance, Properties)
 
 end
 function module:BoxNew(StartCF, Size, Properties)
+    local Camera = game:GetService("Workspace").CurrentCamera
 	local NewBox = Drawing.new("Quad")
 
 	local TopLeft, TLVis = Camera:WorldToViewportPoint((StartCF * CFrame.new(Size.X, Size.Y, 0)).Position)
