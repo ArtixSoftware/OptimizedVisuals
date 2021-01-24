@@ -25,7 +25,6 @@ function module:BoxUpdate(Instance, StartCF, Size, Properties)
             return Instance
         else
             Instance:Remove()
-            Instance = nil
             return nil
         end
     end
