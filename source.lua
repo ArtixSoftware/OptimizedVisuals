@@ -55,7 +55,7 @@ end
 
 function module:TextUpdate(Instance, Position, Properties, PositionOffset)
     local Camera = game:GetService("Workspace").CurrentCamera
-    local ScreenPos, IsVisible = Camera:WorldToViewportPoint(Position)
+    local ScreenPos, IsVisible = Camera:WorldToScreenPoint(Position)
 
     if IsVisible then
         PositionOffset = PositionOffset or Vector2.new(0,0)
@@ -72,7 +72,7 @@ end
 function module:TextNew(Position, Properties, PositionOffset)
     local Camera = game:GetService("Workspace").CurrentCamera
     local NewText = Drawing.new("Text")
-    local ScreenPos, IsVisible = Camera:WorldToViewportPoint(Position)
+    local ScreenPos, IsVisible = Camera:WorldToScreenPoint(Position)
 
     if IsVisible then
         PositionOffset = PositionOffset or Vector2.new(0,0)
