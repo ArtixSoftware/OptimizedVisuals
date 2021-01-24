@@ -17,7 +17,8 @@ function module:BoxNew(StartCF, Size, Properties)
 	local BottomRight, BRVis = Camera:WorldToViewportPoint((StartCF * CFrame.new(-Size.X, -Size.Y, 0)).Position)
 	local BottomLeft, BLVis = Camera:WorldToViewportPoint((StartCF * CFrame.new(Size.X, -Size.Y, 0)).Position)
 
-	if TLVis and TRVis and BRVis and BLVis then
+    if TLVis and TRVis and BRVis and BLVis then
+        Properties.Visible = true
 		Properties.PointA = Vector2.new(TopLeft.X, TopLeft.Y)
 		Properties.PointB = Vector2.new(TopRight.X, TopRight.Y)
 		Properties.PointC = Vector2.new(BottomRight.X, BottomRight.Y)
