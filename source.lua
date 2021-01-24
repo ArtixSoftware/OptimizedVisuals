@@ -1,11 +1,13 @@
-local Visuals = {
-    Box = {},
-}
+local Visuals = {}
 
-function Box:Update(Instance, Properties)
+local function Set(t, i, v)
+	t[i] = v;
+end
+
+function Visuals:Box:Update(Instance, Properties)
 
 end
-function Box:New(StartCF, Size, Properties)
+function Visuals:Box:New(StartCF, Size, Properties)
     local NewBox = Drawing.new("Quad")
 
     local TopLeft, TLVis = Camera:WorldToViewportPoint((StartCF * CFrame.new(Size.X, Size.Y, 0)).Position)
