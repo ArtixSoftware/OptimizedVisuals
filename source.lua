@@ -25,6 +25,7 @@ function module:BoxUpdate(Instance, StartCF, Size, Properties)
             return Instance
         else
             Instance:Remove()
+            return nil
         end
     end
 end
@@ -48,7 +49,8 @@ function module:BoxNew(StartCF, Size, Properties)
 		end
 		return NewBox
 	else
-		NewBox:Remove()
+        NewBox:Remove()
+        return nil
 	end
 end
 
