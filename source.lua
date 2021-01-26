@@ -82,7 +82,6 @@ function module:TextNew(Position, Properties, PositionOffset)
 		end
 		return NewText
     else
-        NewText.Removing = true
         NewText:Remove()
         return nil
     end
