@@ -48,7 +48,7 @@ function module:BoxNew(StartCF, Size, Properties)
 		end
 		return NewBox
     else
-        --NewBox:Remove()
+        NewBox:Remove()
         return nil
 	end
 end
