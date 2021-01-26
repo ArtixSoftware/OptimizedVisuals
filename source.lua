@@ -6,8 +6,8 @@ end
 module.RemovingObjects = {}
 
 function module:RemoveDrawing(Instance)
-    table.insert(RemovingObjects, #RemovingObjects, Instance)
-    print(#RemovingObjects)
+    table.insert(module.RemovingObjects, #module.RemovingObjects, Instance)
+    print(#module.RemovingObjects)
 end
 
 function module:BoxUpdate(Instance, StartCF, Size, Properties)
