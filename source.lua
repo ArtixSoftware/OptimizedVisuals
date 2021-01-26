@@ -3,6 +3,12 @@ local module = {}
 local function Set(t, i, v)
 	t[i] = v;
 end
+module.RemovingObjects = {}
+
+function module:RemoveDrawing(Instance)
+    table.insert(RemovingObjects, #RemovingObjects, Instance)
+    print(#RemovingObjects)
+end
 
 function module:BoxUpdate(Instance, StartCF, Size, Properties)
     if Instance ~= nil then
@@ -47,7 +53,8 @@ function module:BoxNew(StartCF, Size, Properties)
 			pcall(Set, NewBox, i, v)
 		end
 		return NewBox
-	else
+    else
+        module:RemoveDrawing(NewBox)
         NewBox:Remove()
         return nil
 	end
