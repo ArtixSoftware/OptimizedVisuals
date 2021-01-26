@@ -3,12 +3,6 @@ local module = {}
 local function Set(t, i, v)
 	t[i] = v;
 end
-module.RemovingObjects = {}
-
-function module:RemoveDrawing(Instance)
-    table.insert(module.RemovingObjects, #module.RemovingObjects, Instance)
-    print(#module.RemovingObjects)
-end
 
 function module:BoxUpdate(Instance, StartCF, Size, Properties)
     if Instance ~= nil then
@@ -54,8 +48,7 @@ function module:BoxNew(StartCF, Size, Properties)
 		end
 		return NewBox
     else
-        module:RemoveDrawing(NewBox)
-        NewBox:Remove()
+        --NewBox:Remove()
         return nil
 	end
 end
